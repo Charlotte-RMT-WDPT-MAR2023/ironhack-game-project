@@ -1,23 +1,26 @@
-Project's name
+# Project's name
 
+[Click here to see deployed game](http://github.com)
 
-
-
-Description
-
+## Description
 Brief description of the project
-MVP
 
-MVP definition here, list of minimum features
-Backlog
 
-List of features you might implement after the MVP
-Data structure
+## MVP
+_MVP definition here, list of minimum features_
 
-List of classes and methods
-States y States Transitions
 
-List of states (views) of your game
-Task
+## Backlog
+_List of features you might implement after the MVP_
 
-List of tasks in order of priority
+
+## Data structure
+_List of classes and methods_
+
+
+## States y States Transitions
+_List of states (views) of your game_
+
+
+## Task
+_List of tasks in order of priority_
