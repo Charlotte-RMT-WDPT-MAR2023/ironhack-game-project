@@ -1,0 +1,23 @@
+body{
+    margin: auto;
+}
+#lobby {
+    float: left;
+    padding: 0% 5%;  
+}
+
+#main {
+    float: left;
+    padding: 0% 0%;
+    display: flex;
+    flex-direction: column;
+}
+
+#typeHere{
+    text-align: center;
+}
+
+#annex {
+    float: left;
+    padding: 0% 5%;  
+}
