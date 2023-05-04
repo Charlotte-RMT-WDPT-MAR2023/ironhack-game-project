@@ -32,7 +32,7 @@ class WordGenerator{
   }
 
   update() {
-    ctx.font = 'bold 36px sans-serif';
+    ctx.font = 'bold 48px sans-serif';
     ctx.fillStyle = this.color;
     ctx.fillText(this.word, this.x, this.height);
   }
@@ -57,65 +57,11 @@ function moveWords(){
   let word = wordsArray[iWord];
   let x;
   if(direction === 0){x = canvas.width;}
-  if(direction === 1){x = -word.length*30;}
+  if(direction === 1){x = -word.length*48;}
   wordsOnscreen.push(new WordGenerator(height, color, word, direction, x));
   }
 
 }
-
-
-//Word Generator
-// const makeWord = {
-//     y: Math.floor(Math.random() * 300)+ 50,
-//     x: canvas.width,
-//     speed: -1,
-//     i: Math.floor(Math.random() * (wordsKids.length -1)),
-    
-//     move: function() {
-//       this.x += this.speed;
-//     },
-//     draw: function() {
-//         ctx.font = '36px serif';
-//         ctx.fillStyle = 'white';
-//         ctx.fillText(wordsKids[this.i].toUpperCase(), this.x, this.y);
-//     },
-//   }
-// function generateWord(){
-//   if(frames % 60 === 0){
-//       wordsOnscreen.unshift(makeWord);
-//       wordsOnscreen[0].y = Math.floor(Math.random() * 300)+ 50,
-//       wordsOnscreen[0].x = canvas.width;
-//       wordsOnscreen[0].i = Math.floor(Math.random() * wordsKids.length -1);
-//   }
-//     }
-
-
-
-//Add event listener to the Input
-//Add functions to start game
-function kidsGame(){
-
-    // generateWord();
-    frames++
-    
-    // for(i=0;i<wordsOnscreen.length;i++){
-    //     wordsOnscreen[i].move();
-    // }
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(duckBG, 0, 0, canvas.width, canvas.height);
-    moveWords();
-    // for(i=0;i<wordsOnscreen.length;i++){
-    //     wordsOnscreen[0].draw();
-    // }
-    checkWord();
-    let animation = requestAnimationFrame(kidsGame);
-    if(score === 4){
-      cancelAnimationFrame(animation);
-    alert('Program Working So far');}
-}
-
-
-
 
 //Function to check if word is on screen
 function checkWord(){
@@ -126,4 +72,19 @@ function checkWord(){
         score++;
         document.getElementById('annex').innerHTML = `Score: ${score}`
     }
+}
+
+// function loseLife(){}
+
+//Looping game function: kids
+function kidsGame(){
+  frames++
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.drawImage(duckBG, 0, 0, canvas.width, canvas.height);
+  moveWords();
+  checkWord();
+  let animation = requestAnimationFrame(kidsGame);
+  if(score === 4){
+    cancelAnimationFrame(animation);
+  alert('Program Working So far');}
 }
