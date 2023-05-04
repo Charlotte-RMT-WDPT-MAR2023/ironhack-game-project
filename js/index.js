@@ -8,50 +8,57 @@ let score = 0;
 let difficulty = 0;
 const input = document.getElementById('typeHere');
 const wordsOnscreen = [];
+let wordsArray = [];
 
 //Add event listener to the button
 window.onload = () => {
     document.getElementById('btn-kids').onclick = () => {
-    document.getElementById('btn-kids').style.visibility = 'hidden';
-    input.addEventListener('input', checkWord);
-    kidsGame();
-    difficulty = 1;
-    };
+      document.getElementById('btn-kids').style.visibility = 'hidden';
+      input.addEventListener('input', checkWord);
+      difficulty = 1;
+      wordsArray = wordsThree.concat(wordsFour);
+      kidsGame();
+      };
   };
 
 //Create Class for the Word Generator
 class WordGenerator{
-  constructor(height, color, word){
+  constructor(height, color, word, direction, x){
     this.height = height;
     this.color = color;
-    this.word = word;
-    this.x = canvas.width
+    this.word = word.toLowerCase();
+    this.x = x;
+    this.direction = direction
   }
 
   update() {
-    ctx.font = '36px serif';
+    ctx.font = 'bold 36px sans-serif';
     ctx.fillStyle = this.color;
-    ctx.fillText(this.word.toUpperCase(), this.x, this.height);
+    ctx.fillText(this.word, this.x, this.height);
   }
 
 }
 
 function moveWords(){
   for (i = 0; i < wordsOnscreen.length; i++) {
-    wordsOnscreen[i].x += -1;
+    if(wordsOnscreen[i].direction === 0){wordsOnscreen[i].x += -1;}
+    if(wordsOnscreen[i].direction === 1){wordsOnscreen[i].x += 1;}
     wordsOnscreen[i].update();
-    
   }
   //every 2.4 secs
   if(frames % 120 === 0){
-  let height = Math.floor(Math.random() * (canvas.height-50));
+  let height = 50 + Math.floor(Math.random() * (canvas.height-50));
   let red = Math.floor(Math.random() * 255);
   let green = Math.floor(Math.random() * 255);
   let blue = Math.floor(Math.random() * 255);
   let color = `rgb(${red},${green},${blue})`;
-  let iWord = Math.floor(Math.random() * wordsKids.length)
-  let word = wordsKids[iWord];
-  wordsOnscreen.push(new WordGenerator(height, color, word));
+  let iWord = Math.floor(Math.random() * wordsArray.length);
+  let direction = Math.floor(Math.random() * 2);
+  let word = wordsArray[iWord];
+  let x;
+  if(direction === 0){x = canvas.width;}
+  if(direction === 1){x = -word.length*30;}
+  wordsOnscreen.push(new WordGenerator(height, color, word, direction, x));
   }
 
 }
@@ -112,7 +119,9 @@ function kidsGame(){
 
 //Function to check if word is on screen
 function checkWord(){
-    if(input.value === 'test'){
+  let isolateWord = wordsOnscreen.map(item => item.word)
+    if(isolateWord.includes(input.value)){
+        wordsOnscreen.splice(isolateWord.indexOf(input.value), 1);
         input.value = '';
         score++;
         document.getElementById('annex').innerHTML = `Score: ${score}`
