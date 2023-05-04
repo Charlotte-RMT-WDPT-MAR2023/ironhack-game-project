@@ -8,12 +8,35 @@
     <title>xxx</title>
   </head>
   <body>
-    <section id="lobby"><a href="#typeHere"><button id="btn-kids">Kids</button></a></section>
-    <section id="main">
-      <canvas width="700" height="350" id="canvas"></canvas>
-      <input type="text" name="" id="typeHere">
-    </section>
-    <section id="annex">Score: 0</section>
+    <main>
+      <section id="lobby">
+        <div>
+          <select id="kids-goal">
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <a href="#typeHere"><button id="btn-kids">Kids</button></a>
+        </div>
+        <a href="#typeHere"><button id="btn-easy">Easy</button></a>
+        <a href="#typeHere"><button id="btn-med">Medium</button></a>
+        <a href="#typeHere"><button id="btn-hard">Hard</button></a>
+        <a href="#typeHere"><button id="btn-german">German</button></a>
+      </section>
+      <section id="game-board">
+        <canvas width="700" height="350" id="canvas"></canvas>
+        <input type="text" name="" id="typeHere">
+      </section>
+      <section id="annex">
+        <div id="score">Score: 0</div>
+        <div id="life"></div>
+        <ol id="correct"></ol>
+      </section>
+    </main>
     <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="./js/data-german.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
