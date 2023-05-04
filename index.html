@@ -8,10 +8,25 @@
     <title>xxx</title>
   </head>
   <body>
-    <section id="lobby"><a href="#typeHere"><button id="btn-kids">Kids</button></a></section>
+    <section id="lobby"></section>
     <section id="main">
-      <canvas width="700" height="350" id="canvas"></canvas>
-      <input type="text" name="" id="typeHere">
+      <!-- start screen -->
+      <div id="start-screen" style="display: block">
+        <button id="btn-kids">Start Kids Game</button>
+      </div>
+
+      <!-- game screen -->
+      <div id="game-screen" style="display: none">
+        <canvas id="canvas"></canvas>
+        <a href="#typeHere"></a>
+        <input type="text" name="" id="typeHere" />
+      </div>
+
+      <!-- gameover screen -->
+      <div id="gameover-screen" style="display: none">
+        <h1>Game Over</h1>
+        <button id="btn-play-again">Play again</button>
+      </div>
     </section>
     <section id="annex">Score: 0</section>
     <script type="text/javascript" src="js/data.js"></script>
