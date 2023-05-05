@@ -8,9 +8,14 @@
     <title>xxx</title>
   </head>
   <body>
+
     <main>
-      <section id="lobby">
-        <div>
+        
+        
+        <!-- start screen -->
+      <section id="start-screen" style="display: block">
+        <button id="btn-kids">Start Kids Game</button>
+             
           <select id="kids-goal">
             <option value="4">4</option>
             <option value="5">5</option>
@@ -21,22 +26,35 @@
             <option value="10">10</option>
           </select>
           <a href="#typeHere"><button id="btn-kids">Kids</button></a>
-        </div>
+        
         <a href="#typeHere"><button id="btn-easy">Easy</button></a>
         <a href="#typeHere"><button id="btn-med">Medium</button></a>
         <a href="#typeHere"><button id="btn-hard">Hard</button></a>
         <a href="#typeHere"><button id="btn-german">German</button></a>
-      </section>
-      <section id="game-board">
-        <canvas width="700" height="350" id="canvas"></canvas>
+       </section>
+       
+       <!-- game screen -->
+       
+      <section id="game-board game-screen" style="display: none">
+        <canvas id="canvas"></canvas>
         <input type="text" name="" id="typeHere">
-      </section>
-      <section id="annex">
+          <section id="annex">
         <div id="score">Score: 0</div>
         <div id="life"></div>
         <ol id="correct"></ol>
       </section>
+      
+       <!-- gameover screen -->
+      <section id="gameover-screen" style="display: none">
+        <button id="btn-play-again">Play again</button>
+      </section>
+    </section>
     </main>
+  
+
+     
+    
+
     <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="./js/data-german.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

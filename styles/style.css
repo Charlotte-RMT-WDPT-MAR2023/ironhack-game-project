@@ -1,5 +1,5 @@
-body{
-    margin: auto;
+body {
+  margin: auto;
 }
 
 main{
@@ -20,13 +20,73 @@ main{
     padding: 0% 0%;
     display: flex;
     flex-direction: column;
+
+
+#btn-kids,
+#btn-play-again {
+  box-sizing: border-box;
+  width: 350px;
+  height: 100px;
+  background: #37a8c8;
+  border: 3px solid #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 40px;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-#typeHere{
+#start-screen {
+  width: 100vw;
+  height: 100vh;
+  background: url("/images/Ducks.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+#gameover-screen {
+  width: 100vw;
+  height: 100vh;  
+  background: url("/images/8706.png");
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: contain;
+  background-position: center center;
+}
+
+#canvas {
+  position: relative;
+}
+
+#typeHere {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  width: 40%;
+  background: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.9;
+  border: 3px solid #5f2c01;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  font-size: 30px;
     text-align: center;
 }
 
 #annex {
-    /* float: left; */
-    padding: 0% 5%;  
+ position: absolute;
+  top: 10%;
+  right: 5%;
+  padding: 0% 5%;
+  color: #ffffff;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
+
