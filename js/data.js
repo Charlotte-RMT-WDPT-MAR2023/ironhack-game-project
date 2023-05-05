@@ -66,7 +66,74 @@ const wordsFive = [
 'Cheap', 'Chief', 'Civil', 'Clean', 'Clear', 'Close',
 'Crazy', 'Daily', 'Dirty', 'Early'
 ]
-const testArray = [];
+
+const wordsSix = [
+'Animal', 'Basket', 'Bubble', 'Butter', 'Camera', 'Carpet',
+'Castle', 'Cheese', 'Danger', 'Dragon', 'Father', 'Flower',
+'Forest', 'Guitar', 'Jungle', 'Mother', 'Orange', 'Pepper',
+'Pillow', 'Planet', 'Potato', 'Rocket', 'Sailor', 'Shadow',
+'Spirit', 'Sunset', 'Tomato', 'Turtle', 'Window', 'Winter',
+'Course', 'System', 'School', 'Family', 'Market', 'Police',
+'Policy', 'Office', 'Person', 'Health', 'Period', 'Centre',
+'Effect', 'Action', 'Moment', 'Report', 'Church', 'Change',
+'Street', 'Result', 'Reason', 'Nature', 'Member', 'Figure',
+'Friend', 'Amount', 'Series', 'Future', 'Labour', 'Letter',
+'Theory', 'Growth', 'Chance', 'Record', 'Energy', 'Income',
+'Scheme', 'Design', 'Choice', 'Couple', 'County', 'Summer',
+'Colour', 'Season', 'Garden', 'Charge', 'Advice', 'Doctor',
+'Extent', 'Access', 'Region', 'Degree', 'Return', 'Public',
+'Answer', 'Leader', 'Appeal', 'Method', 'Source', 'Oxford',
+'Demand', 'Sector', 'Status', 'Safety', 'Weight', 'League',
+'Budget', 'Review', 'Minute', 'Survey', 'Speech', 'Effort',
+'Career', 'Attack', 'Length', 'Memory', 'Impact', 'Sister']
+
+const wordsSeven = [
+'Bicycle', 'Library', 'Diamond', 'Theater',
+'Rainbow', 'Machine', 'Vehicle', 'Sunrise',
+'Freedom', 'Harmony', 'Kitchen', 'Country',
+'Network', 'Journey', 'Mystery', 'Curtain',
+'Promise', 'Handbag', 'Balloon', 'Weather',
+'Cottage', 'Blanket', 'Plumage', 'Biscuit',
+'Iceberg', 'Cupcake', 'Earring', 'Desktop',
+'Company', 'Example', 'Council', 'Service',
+'Problem', 'Control', 'Society', 'Process',
+'Support', 'Morning', 'Century', 'History',
+'Section', 'Subject', 'Quality', 'Project',
+'Chapter', 'Manager', 'Account', 'Success',
+'Capital', 'Defense', 'Product', 'Village',
+'Husband', 'Science', 'Economy', 'Picture',
+'College', 'Station', 'Species', 'Concern',
+'Purpose', 'Ability', 'Provide', 'Believe', 
+'Suppose', 'Support', 'Suggest', 'Develop',
+'Explain', 'Receive', 'Require', 'Achieve',
+'Prevent', 'Improve', 'Imagine', 'Discuss',
+'Control', 'Protect', 'Contain', 'Involve',
+'Contact', 'Operate', 'Realize', 'Reflect',
+'Examine', 'Respond', 'Survive', 'Replace',
+'Present', 'Promote', 'Perform', 'Express',
+'Mention', 'Benefit', 'Prepare', 'Collect',
+'Welcome', 'Confirm', 'Attempt', 'Attract',
+'Compare', 'Account', 'Explore', 'Arrange',
+'Realize', 'Proceed', 'Succeed', 'Justify',
+'Acquire', 'Recover', 'Suspect', 'Finance',
+'Destroy', 'Comment', 'Satisfy', 'Compete',
+'Address', 'Display', 'Release', 'Measure',
+'Restore', 'Observe', 'Combine', 'Include',
+'Produce', 'Similar', 'Private', 'Foreign', 
+'Present', 'Natural', 'Current', 'Serious',
+'Popular', 'Western', 'Medical', 'Primary',
+'Obvious', 'Nuclear', 'Regular', 'Complex',
+'Initial', 'Average', 'Strange', 'Overall',
+'Precise', 'Visible', 'Distant', 'Violent',
+'Welcome', 'Evident', 'Classic', 'Illegal',
+'Intense', 'Logical', 'Organic', 'Curious',
+'Gastric', 'Digital', 'Monthly', 'Painful',
+'Unhappy', 'Genetic', 'Partial', 'Elegant',
+'Interim', 'Chronic', 'Payable', 'Premier',
+'Hostile', 'Various']
+
+const testArray = [`
+`];
 let content = testArray.toString().split('\n');
 let content2 = content.map(val => val.replace('    ', ''))
-// console.log(wordsFive.length);
+// console.log(wordsSeven.length);
