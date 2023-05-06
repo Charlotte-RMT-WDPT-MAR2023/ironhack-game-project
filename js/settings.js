@@ -14,25 +14,25 @@ btnSave.onclick = function () {
   const goal = 4;
   const musicState = true;
 
-  if (document.getElementById("btn-kid").classList.contains("selected")) {
-    difficulty = "kids";
-  } else if (
-    document.getElementById("btn-easy").classList.contains("selected")
-  ) {
-    difficulty = "easy";
-  } else if (
-    document.getElementById("btn-med").classList.contains("selected")
-  ) {
-    difficulty = "medium";
-  } else if (
-    document.getElementById("btn-hard").classList.contains("selected")
-  ) {
-    difficulty = "hard";
-  } else if (
-    document.getElementById("btn-german").classList.contains("selected")
-  ) {
-    difficulty = "german";
-  }
+  // if (document.getElementById("btn-kid").classList.contains("selected")) {
+  //   difficulty = "kids";
+  // } else if (
+  //   document.getElementById("btn-easy").classList.contains("selected")
+  // ) {
+  //   difficulty = "easy";
+  // } else if (
+  //   document.getElementById("btn-med").classList.contains("selected")
+  // ) {
+  //   difficulty = "medium";
+  // } else if (
+  //   document.getElementById("btn-hard").classList.contains("selected")
+  // ) {
+  //   difficulty = "hard";
+  // } else if (
+  //   document.getElementById("btn-german").classList.contains("selected")
+  // ) {
+  //   difficulty = "german";
+  // }
 
   goal = parseInt(document.getElementById("kids-goal").value);
 
@@ -59,20 +59,40 @@ btnMusicOff.addEventListener("click", () => {
 
 btnKid.addEventListener("click", () => {
   btnKid.classList.add("selected");
+  btnEasy.classList.remove("selected");
+  btnMed.classList.remove("selected");
+  btnHard.classList.remove("selected");
+  btnGerman.classList.remove("selected");
 });
 
 btnEasy.addEventListener("click", () => {
   btnEasy.classList.add("selected");
+  btnKid.classList.remove("selected");
+  btnMed.classList.remove("selected");
+  btnHard.classList.remove("selected");
+  btnGerman.classList.remove("selected");
 });
 
 btnMed.addEventListener("click", () => {
   btnMed.classList.add("selected");
+  btnKid.classList.remove("selected");
+  btnEasy.classList.remove("selected");
+  btnHard.classList.remove("selected");
+  btnGerman.classList.remove("selected");
 });
 
 btnHard.addEventListener("click", () => {
   btnHard.classList.add("selected");
+  btnKid.classList.remove("selected");
+  btnEasy.classList.remove("selected");
+  btnMed.classList.remove("selected");
+  btnGerman.classList.remove("selected");
 });
 
-btnHard.addEventListener("click", () => {
-  btnEasy.classList.add("selected");
+btnGerman.addEventListener("click", () => {
+  btnGerman.classList.add("selected");
+  btnKid.classList.remove("selected");
+  btnEasy.classList.remove("selected");
+  btnMed.classList.remove("selected");
+  btnHard.classList.remove("selected");
 });

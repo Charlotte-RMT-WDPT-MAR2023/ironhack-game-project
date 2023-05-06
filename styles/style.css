@@ -2,7 +2,7 @@ body {
   margin: auto;
 }
 
-#btn-kids,
+#btn-start,
 #btn-play-again,
 #btn-settings {
   box-sizing: border-box;
@@ -23,11 +23,20 @@ body {
   background: url("../images/Ducks.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
+  /* display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center; */
+}
+
+#start-content{
   display: flex;
   flex-direction: column;
   gap: 10px;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 #gameover-screen {
