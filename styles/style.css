@@ -2,10 +2,10 @@ body {
   margin: auto;
 }
 
-main {
+/* main {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 #btn-kids,
 #btn-play-again {
