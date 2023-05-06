@@ -10,19 +10,19 @@ body {
 #btn-kids,
 #btn-play-again {
   box-sizing: border-box;
-  width: 350px;
-  height: 100px;
+  width: 300px;
+  height: 80px;
   background: #37a8c8;
   border: 3px solid #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 30px;
   color: #ffffff;
-  position: absolute;
+  /*position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);*/
 }
 
 #kids-goal,
@@ -31,17 +31,15 @@ body {
 #btn-hard,
 #btn-german {
   box-sizing: border-box;
-  width: 350px;
-  height: 100px;
+  width: 300px;
+  height: 80px;
   background: #37a8c8;
   border: 3px solid #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 30px;
   color: #ffffff;
-  display: flex;
-  flex-direction: column;
 }
 
 #start-screen {
@@ -50,6 +48,11 @@ body {
   background: url("/images/Ducks.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 #gameover-screen {

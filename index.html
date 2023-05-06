@@ -8,52 +8,43 @@
     <title>xxx</title>
   </head>
   <body>
-
     <main>
-        
-        
-        <!-- start screen -->
-      <section id="start-screen" style="display: block">
-                    
-          <select id="kids-goal">
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+      <!-- start screen -->
+      <section id="start-screen" >
+        <select id="kids-goal">
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <a href="#typeHere"><button id="btn-kids">Start Kids Game</button></a>
 
-          </select>
-          <a href="#typeHere"><button id="btn-kids">Start Kids Game</button></a>
-        
         <a href="#typeHere"><button id="btn-easy">Easy</button></a>
         <a href="#typeHere"><button id="btn-med">Medium</button></a>
         <a href="#typeHere"><button id="btn-hard">Hard</button></a>
         <a href="#typeHere"><button id="btn-german">German</button></a>
-       </section>
-       
-       <!-- game screen -->
-       
+      </section>
+
+      <!-- game screen -->
+
       <section id="game-screen" style="display: none">
         <canvas id="canvas"></canvas>
-        <input type="text" name="" id="typeHere">
-      <section id="annex">
-        <div id="score">Score: 0</div>
-        <div id="life"></div>
-        <div id="timer"></div>
-      </section>
-      
-       <!-- gameover screen -->
-      <section id="gameover-screen" style="display: none">
-        <button id="btn-play-again">Play again</button>
-      </section>
-    </section>
-    </main>
-  
+        <input type="text" name="" id="typeHere" />
+        <section id="annex">
+          <div id="score">Score: 0</div>
+          <div id="life"></div>
+          <div id="timer"></div>
+        </section>
 
-     
-    
+        <!-- gameover screen -->
+        <section id="gameover-screen" style="display: none">
+          <button id="btn-play-again">Play again</button>
+        </section>
+      </section>
+    </main>
 
     <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="./js/data-german.js"></script>

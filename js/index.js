@@ -178,7 +178,7 @@ function countdown(){
 function win(){
   if(score === +document.getElementById('kids-goal').value && difficulty === 1 || timer < 0){
     cancelAnimationFrame(animation);
-    // togglescreen("game-screen", false);
+    //togglescreen("game-screen", false);
     togglescreen("gameover-screen", true);
     canvas.style.filter = "blur(5px)";
   }
