@@ -4,7 +4,7 @@
 
 ## Description
 
-Duckle is a children's game where players have to type the words that appear on the screen. The game ends when the player has scored the set number of points or has lost all of their lives.
+Duckle is a word game where players have to type the words that appear on the screen. The game ends when the player has scored the set number of points or has lost all of their lives.
 
 
 
