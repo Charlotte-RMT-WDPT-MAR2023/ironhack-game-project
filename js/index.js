@@ -107,6 +107,8 @@ window.onload = () => {
     timer = 61;
     input.value = '';
     canvas.style.filter = "blur(0px)";
+    document.getElementById('life').innerHTML = ``;
+    document.getElementById('timer').innerHTML = ``;
     // game();
   };
   
@@ -197,6 +199,7 @@ function win(){
     //togglescreen("game-screen", false);
     togglescreen("gameover-screen", true);
     canvas.style.filter = "blur(5px)";
+    document.getElementById('win-lose').innerHTML = '<img src="./images/8706.png" id="win" alt=""/>';
     music.pause();
   }
 }
