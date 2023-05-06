@@ -14,15 +14,18 @@ var btnOpenModal = document.getElementById("btn-settings");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 ctx.canvas.width  = window.innerWidth;
-ctx.canvas.height = window.innerHeight;
+ctx.canvas.height = window.innerHeight * .99;
 const duckBG = new Image();
 duckBG.src = "./images/Ducks.jpg";
+const flameBG = new Image();
+flameBG.src = './images/burning-fire.jpg';
 let frames = 0;
 let score = 0;
 let life = 4;
 let animation;
 let difficulty = 0;
 let timer = 61;
+let german = 0;
 const input = document.getElementById("typeHere");
 const wordsOnscreen = [];
 let wordsArray = [];
@@ -89,6 +92,7 @@ window.onload = () => {
       // input.addEventListener('input', checkWord);
       difficulty = 2;
       wordsArray = wordsGerman;
+      german = 1;
       game();
       };
 
@@ -103,6 +107,7 @@ window.onload = () => {
     frames = 0;
     score = 0;
     life = 4;
+    german = 0;
     wordsOnscreen.length = 0;
     timer = 61;
     input.value = '';
@@ -209,6 +214,8 @@ function lose(){
   if(difficulty > 1 && life < 1){
     cancelAnimationFrame(animation);
     togglescreen("gameover-screen", true);
+    canvas.style.filter = "blur(5px)";
+    document.getElementById('win-lose').innerHTML = '<img src="./images/te856-removebg-preview.png" id="lose" alt=""/>';
     music.pause();
   }
 }
@@ -218,7 +225,9 @@ function lose(){
 
 function game(){
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(duckBG, 0, 0, canvas.width, canvas.height);
+  if(german===0){ctx.drawImage(duckBG, 0, 0, canvas.width, canvas.height);}
+  if(german===1){ctx.drawImage(flameBG, 0, 0, canvas.width, canvas.height);}
+  document.getElementById('goal').innerHTML = `Goal: ${+document.getElementById('kids-goal').value}`;
   moveWords();
   countdown();
   music.play();

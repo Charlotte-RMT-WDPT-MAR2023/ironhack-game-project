@@ -36,17 +36,17 @@ body {
   left: 0%;
   width: 100vw;
   height: 100vh;
-  /* background: url("/images/8706.png");
-  background-repeat: no-repeat;
-  object-fit: cover;
-  background-size: contain;
-  background-position: center center; */
+  text-align: center;
 }
 
+
+
 #win{
-  position: absolute;
-  left: 30%;
   width: 40%;
+}
+
+#lose{
+  width: 50%;
 }
 
 #canvas {
