@@ -1,19 +1,9 @@
 const germanDictionary=[
-`Aal
-AStA
-Aalen
-Aar
-Aalreuse
-ADAC
-ADN
-AG
-APO
-ARD
+`
 Aaron
 Aalfang
 Aalenium
 Aachen
-Aa
 Aalfischerei
 Aalfischer
 Aalener
@@ -26,16 +16,6 @@ Aarau
 Aare
 Aargau
 Aargauer
-AB
-AVB
-AWG
-ABC-Tafel
-ABC-Waffen-frei
-ABC
-ARP
-ASCII
-ABS
-AFC
 Aalbricke
 Aalmolch
 Aalmutter
@@ -43,7 +23,6 @@ Aalmöwe
 Aalsmeer
 Aalst
 Aaltierchen
-ADSL
 Aalrute
 Aake
 Aaners
