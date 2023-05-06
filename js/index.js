@@ -1,3 +1,17 @@
+//settings button
+
+var btnOpenModal = document.getElementById("btn-settings");
+  var modal = document.getElementById("settings-modal");
+
+  btnOpenModal.onclick = function() {
+    modal.style.display = "block";
+  }
+
+
+
+
+
+
 //prepare constants
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");

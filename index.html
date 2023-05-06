@@ -10,22 +10,39 @@
   <body>
     <main>
       <!-- start screen -->
-      <section id="start-screen" >
-        <select id="kids-goal">
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-        <a href="#typeHere"><button id="btn-kids">Start Kids Game</button></a>
+      <section id="start-screen">
+        <a href="#typeHere"><button id="btn-kids">Start Game</button></a>
 
-        <a href="#typeHere"><button id="btn-easy">Easy</button></a>
-        <a href="#typeHere"><button id="btn-med">Medium</button></a>
-        <a href="#typeHere"><button id="btn-hard">Hard</button></a>
-        <a href="#typeHere"><button id="btn-german">German</button></a>
+        <button id="btn-settings">Settings</button>
+
+        <div id="settings-modal" class="modal">
+          <div class="modal-content">
+            <div>
+              <label>Difficulty</label>
+              <br>
+              <a href="#typeHere"><button id="btn-kid">Kids</button></a> <!--changed button id for styling, need to fix -->
+              <a href="#typeHere"><button id="btn-easy">Easy</button></a>
+              <a href="#typeHere"><button id="btn-med">Medium</button></a>
+              <a href="#typeHere"><button id="btn-hard">Hard</button></a>
+              <a href="#typeHere"><button id="btn-german">German</button></a>
+            </div>
+            <div>
+              <label>Goal</label>
+              <br>
+              <select id="kids-goal">
+                <option value="4">4 words</option>
+                <option value="5">5 words</option>
+                <option value="6">6 words</option>
+                <option value="7">7 words</option>
+                <option value="8">8 words</option>
+                <option value="9">9 words</option>
+                <option value="10">10 words</option>
+              </select>
+           <!-- </div>
+            <button id="btn-save">Save</button>
+          </div>  -->
+
+        </div>
       </section>
 
       <!-- game screen -->
