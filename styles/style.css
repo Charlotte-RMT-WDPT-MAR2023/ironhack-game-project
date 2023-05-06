@@ -115,6 +115,21 @@ body {
   cursor: pointer;
 }
 
+#music-toggle {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 .modal-content button:hover {
   background-color: #3e8e41;
 }
+
+.modal-content button.selected {
+  background-color: #3e8e41;
+}
+
