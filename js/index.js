@@ -2,16 +2,21 @@
 //prepare constants
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-ctx.canvas.width = window.innerWidth;
-ctx.canvas.height = window.innerHeight;
+
+ctx.canvas.width  = window.innerWidth;
+ctx.canvas.height = window.innerHeight * .99;
+
 const duckBG = new Image();
 duckBG.src = "./images/Ducks.jpg";
+const flameBG = new Image();
+flameBG.src = './images/burning-fire.jpg';
 let frames = 0;
 let score = 0;
 let life = 4;
 let animation;
 let difficulty = 0;
 let timer = 61;
+let german = 0;
 const input = document.getElementById("typeHere");
 const wordsOnscreen = [];
 let wordsArray = [];
@@ -76,13 +81,18 @@ window.onload = () => {
     game();
   };
   //German Button
-  document.getElementById("btn-german").onclick = () => {
-    togglescreen("start-screen", false);
-    togglescreen("game-screen", true);
-    // input.addEventListener('input', checkWord);
-    difficulty = 2;
-    wordsArray = wordsGerman;
-    game();
+
+    document.getElementById('btn-german').onclick = () => {
+      togglescreen("start-screen", false);
+      togglescreen("game-screen", true);
+      // input.addEventListener('input', checkWord);
+      difficulty = 2;
+      wordsArray = wordsGerman;
+      german = 1;
+      game();
+      };
+
+
   };
 };
 
@@ -101,6 +111,27 @@ document.getElementById("btn-play-again").onclick = () => {
   canvas.style.filter = "blur(0px)";
   // game();
 };
+
+
+  //reset button
+  document.getElementById("btn-play-again").onclick = () => {
+    togglescreen("start-screen", true);
+    togglescreen("game-screen", false);
+    togglescreen("gameover-screen", false);
+    // input.addEventListener("input", checkWord);
+    frames = 0;
+    score = 0;
+    life = 4;
+    german = 0;
+    wordsOnscreen.length = 0;
+    timer = 61;
+    input.value = '';
+    canvas.style.filter = "blur(0px)";
+    document.getElementById('life').innerHTML = ``;
+    document.getElementById('timer').innerHTML = ``;
+    // game();
+  };
+  
 
 //music
 const music = document.getElementById("music");
@@ -217,6 +248,7 @@ function win() {
     //togglescreen("game-screen", false);
     togglescreen("gameover-screen", true);
     canvas.style.filter = "blur(5px)";
+    document.getElementById('win-lose').innerHTML = '<img src="./images/8706.png" id="win" alt=""/>';
     music.pause();
     winSound.play();
   }
@@ -227,6 +259,8 @@ function lose() {
   if (difficulty > 1 && life < 1) {
     cancelAnimationFrame(animation);
     togglescreen("gameover-screen", true);
+    canvas.style.filter = "blur(5px)";
+    document.getElementById('win-lose').innerHTML = '<img src="./images/te856-removebg-preview.png" id="lose" alt=""/>';
     music.pause();
     loseSound.play();
   }
@@ -236,7 +270,9 @@ function lose() {
 
 function game() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.drawImage(duckBG, 0, 0, canvas.width, canvas.height);
+  if(german===0){ctx.drawImage(duckBG, 0, 0, canvas.width, canvas.height);}
+  if(german===1){ctx.drawImage(flameBG, 0, 0, canvas.width, canvas.height);}
+  document.getElementById('goal').innerHTML = `Goal: ${+document.getElementById('kids-goal').value}`;
   moveWords();
   countdown();
   music.play();

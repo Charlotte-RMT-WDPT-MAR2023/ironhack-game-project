@@ -31,13 +31,22 @@ body {
 }
 
 #gameover-screen {
+  position: absolute;
+  top: 0%;
+  left: 0%;
   width: 100vw;
   height: 100vh;
-  background: url("/images/8706.png");
-  background-repeat: no-repeat;
-  object-fit: cover;
-  background-size: contain;
-  background-position: center center;
+  text-align: center;
+}
+
+
+
+#win{
+  width: 40%;
+}
+
+#lose{
+  width: 50%;
 }
 
 #canvas {
