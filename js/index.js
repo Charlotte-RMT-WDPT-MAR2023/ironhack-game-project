@@ -10,13 +10,11 @@ var btnOpenModal = document.getElementById("btn-settings");
 
 
 
-
-
 //prepare constants
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 ctx.canvas.width  = window.innerWidth;
-ctx.canvas.height = window.innerHeight * .99;
+ctx.canvas.height = window.innerHeight;
 const duckBG = new Image();
 duckBG.src = "./images/Ducks.jpg";
 let frames = 0;
@@ -111,6 +109,10 @@ window.onload = () => {
     canvas.style.filter = "blur(0px)";
     // game();
   };
+  
+//music
+const music = document.getElementById('music');
+music.load();
 
 
 //Create Class for the Word Generator
@@ -195,6 +197,7 @@ function win(){
     //togglescreen("game-screen", false);
     togglescreen("gameover-screen", true);
     canvas.style.filter = "blur(5px)";
+    music.pause();
   }
 }
 
@@ -203,6 +206,7 @@ function lose(){
   if(difficulty > 1 && life < 1){
     cancelAnimationFrame(animation);
     togglescreen("gameover-screen", true);
+    music.pause();
   }
 }
 
@@ -214,6 +218,7 @@ function game(){
   ctx.drawImage(duckBG, 0, 0, canvas.width, canvas.height);
   moveWords();
   countdown();
+  music.play();
   frames++
   checkWord();
   animation = requestAnimationFrame(game);
