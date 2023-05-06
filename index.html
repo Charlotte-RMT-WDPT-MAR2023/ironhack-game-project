@@ -3,57 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" />
-    <link rel="stylesheet" href="./styles/reset.css" />
-    <link rel="stylesheet" href="./styles/style.css" />
-    <title>xxx</title>
+
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Duckle</title>
+
   </head>
   <body>
     <main>
       <!-- start screen -->
       <section id="start-screen">
-        <div id="start-content">
-          <a href="#typeHere"><button id="btn-start">Start Game</button></a>
-          <button id="btn-settings">Settings</button>
-          <div id="settings-modal" class="modal">
-            <div class="modal-content">
-              <div>
-                <label>Difficulty</label>
-                <br />
-                <a href="#typeHere"><button id="btn-kid">Kids</button></a>
-                <a href="#typeHere"><button id="btn-easy">Easy</button></a>
-                <a href="#typeHere"><button id="btn-med">Medium</button></a>
-                <a href="#typeHere"><button id="btn-hard">Hard</button></a>
-                <a href="#typeHere"><button id="btn-german">German</button></a>
-              </div>
-              <div>
-                <label>Goal</label>
-                <br />
-                <select id="kids-goal">
-                  <option value="1">1 words</option>
-                  <option value="2">2 words</option>
-                  <option value="3">3 words</option>
-                  <option value="4">4 words</option>
-                  <option value="5">5 words</option>
-                  <option value="6">6 words</option>
-                  <option value="7">7 words</option>
-                  <option value="8">8 words</option>
-                  <option value="9">9 words</option>
-                  <option value="10">10 words</option>
-                  <option value="20">20 words</option>
-                  <option value="30">30 words</option>
-                </select>
-              </div>
-              <div>
-          
-                <label for="music-toggle">Music On</label>
-                <br>
-                <button id="btn-music-on">On</button>
-                <button id="btn-music-off">Off</button>
-              </div>
-              <button id="btn-save">Save</button>
+
+        <h1>Duckle</h1>
+        <div id="start-flex">
+        <a href="#typeHere"><button id="btn-kids">Start Game</button></a>
+
+        <button id="btn-settings">Settings</button>
+
+        <div id="settings-modal" class="modal">
+          <div class="modal-content">
+            <div>
+              <label>Difficulty</label>
+              <br />
+              <a href="#typeHere"><button id="btn-kid">Kids</button></a>
+              <a href="#typeHere"><button id="btn-easy">Easy</button></a>
+              <a href="#typeHere"><button id="btn-med">Medium</button></a>
+              <a href="#typeHere"><button id="btn-hard">Hard</button></a>
+              <a href="#typeHere"><button id="btn-german">German</button></a>
+            </div>
+            <div>
+              <label>Goal</label>
+              <br />
+              <select id="kids-goal">
+                <option value="1">1 words</option>
+                <option value="2">2 words</option>
+                <option value="3">3 words</option>
+                <option value="4">4 words</option>
+                <option value="5">5 words</option>
+                <option value="6">6 words</option>
+                <option value="7">7 words</option>
+                <option value="8">8 words</option>
+                <option value="9">9 words</option>
+                <option value="10">10 words</option>
+                <option value="20">20 words</option>
+                <option value="30">30 words</option>
+              </select>
+            </div>
+            <div>
+              
+              <label for="music-toggle">Music On</label>
+              <br>
+              <button id="btn-music-on">On</button>
+              <button id="btn-music-off">Off</button>
+
             </div>
           </div>
         </div>
+      </div>
       </section>
 
       <!-- game screen -->

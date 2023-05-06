@@ -17,7 +17,20 @@ body {
   color: #ffffff;
 }
 
-#start-screen {
+h1{
+  font-weight: 600;
+  font-size: 150px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 6px 6px #5F2C01;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+#start-flex {
   width: 100vw;
   height: 100vh;
   background: url("../images/Ducks.jpg");
@@ -48,13 +61,11 @@ body {
   text-align: center;
 }
 
-
-
-#win{
+#win {
   width: 40%;
 }
 
-#lose{
+#lose {
   width: 50%;
 }
 
@@ -150,4 +161,3 @@ body {
 .modal-content button.selected {
   background-color: #3e8e41;
 }
-
