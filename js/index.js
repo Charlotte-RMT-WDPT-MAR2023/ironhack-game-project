@@ -14,12 +14,12 @@ let frames = 0;
 let score = 0;
 let life = 4;
 let animation;
-let difficulty = 0;
+let difficulty = 1;
 let timer = 61;
 let german = 0;
 const input = document.getElementById("typeHere");
 const wordsOnscreen = [];
-let wordsArray = [];
+let wordsArray = wordsThree.concat(wordsFour);
 
 // //resize canvas to window size
 // function resizeCanvas() {
@@ -39,78 +39,89 @@ function togglescreen(id, toggle) {
 
 //Add event listener to the button
 window.onload = () => {
-  //Kids Button
-  document.getElementById("btn-kids").onclick = () => {
+  //Start Button
+  document.getElementById("btn-start").onclick = () => {
     togglescreen("start-screen", false);
     togglescreen("game-screen", true);
+    game();
+  }
+
+  //Kids Button
+  document.getElementById("btn-kid").onclick = () => {
+    // togglescreen("start-screen", false);
+    // togglescreen("game-screen", true);
     // input.addEventListener('input', checkWord);
     difficulty = 1;
+    german = 0;
     wordsArray = wordsThree.concat(wordsFour);
-    game();
+    // game();
   };
   //Easy Button
   document.getElementById("btn-easy").onclick = () => {
-    togglescreen("start-screen", false);
-    togglescreen("game-screen", true);
+    // togglescreen("start-screen", false);
+    // togglescreen("game-screen", true);
     // input.addEventListener('input', checkWord);
     difficulty = 2;
+    german = 0;
     wordsArray = wordsThree.concat(wordsFour).concat(wordsFive);
-    game();
+    // game();
   };
   //Medium Button
   document.getElementById("btn-med").onclick = () => {
-    togglescreen("start-screen", false);
-    togglescreen("game-screen", true);
+    // togglescreen("start-screen", false);
+    // togglescreen("game-screen", true);
     // input.addEventListener('input', checkWord);
     difficulty = 3;
+    german = 0;
     wordsArray = wordsFive.concat(wordsSix).concat(wordsSeven);
-    game();
+    // game();
   };
   //Hard Button
   document.getElementById("btn-hard").onclick = () => {
-    togglescreen("start-screen", false);
-    togglescreen("game-screen", true);
+    // togglescreen("start-screen", false);
+    // togglescreen("game-screen", true);
     // input.addEventListener('input', checkWord);
     difficulty = 3;
+    german = 0;
     wordsArray = wordsTen
       .concat(wordsNine)
       .concat(wordsEight)
       .concat(wordsFive)
       .concat(wordsSix)
       .concat(wordsSeven);
-    game();
+    // game();
   };
-  //German Button
 
+  //German Button
     document.getElementById('btn-german').onclick = () => {
-      togglescreen("start-screen", false);
-      togglescreen("game-screen", true);
+      // togglescreen("start-screen", false);
+      // togglescreen("game-screen", true);
       // input.addEventListener('input', checkWord);
       difficulty = 2;
       wordsArray = wordsGerman;
       german = 1;
-      game();
+      // game();
       };
 
 
   };
-};
 
-//reset button
-document.getElementById("btn-play-again").onclick = () => {
-  togglescreen("start-screen", true);
-  togglescreen("game-screen", false);
-  togglescreen("gameover-screen", false);
-  // input.addEventListener("input", checkWord);
-  frames = 0;
-  score = 0;
-  life = 4;
-  wordsOnscreen.length = 0;
-  timer = 61;
-  input.value = "";
-  canvas.style.filter = "blur(0px)";
-  // game();
-};
+
+// //reset button
+// document.getElementById("btn-play-again").onclick = () => {
+//   togglescreen("start-screen", true);
+//   togglescreen("game-screen", false);
+//   togglescreen("gameover-screen", false);
+//   // input.addEventListener("input", checkWord);
+//   frames = 0;
+//   score = 0;
+//   life = 4;
+//   wordsOnscreen.length = 0;
+//   timer = 61;
+//   input.value = "";
+//   canvas.style.filter = "blur(0px)";
+//   // game();
+// };
 
 
   //reset button
@@ -122,13 +133,14 @@ document.getElementById("btn-play-again").onclick = () => {
     frames = 0;
     score = 0;
     life = 4;
-    german = 0;
+    // german = 0;
     wordsOnscreen.length = 0;
     timer = 61;
     input.value = '';
     canvas.style.filter = "blur(0px)";
     document.getElementById('life').innerHTML = ``;
     document.getElementById('timer').innerHTML = ``;
+    modal.style.display = "none";
     // game();
   };
   
@@ -239,11 +251,7 @@ function countdown() {
 
 //Win Condition
 function win() {
-  if (
-    (score === +document.getElementById("kids-goal").value &&
-      difficulty === 1) ||
-    timer < 0
-  ) {
+  if (score === +document.getElementById("kids-goal").value  ||  timer < 0) {
     cancelAnimationFrame(animation);
     //togglescreen("game-screen", false);
     togglescreen("gameover-screen", true);
