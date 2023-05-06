@@ -19,8 +19,8 @@
           <div class="modal-content">
             <div>
               <label>Difficulty</label>
-              <br>
-              <a href="#typeHere"><button id="btn-kid">Kids</button></a> 
+              <br />
+              <a href="#typeHere"><button id="btn-kid">Kids</button></a>
               <a href="#typeHere"><button id="btn-easy">Easy</button></a>
               <a href="#typeHere"><button id="btn-med">Medium</button></a>
               <a href="#typeHere"><button id="btn-hard">Hard</button></a>
@@ -28,7 +28,7 @@
             </div>
             <div>
               <label>Goal</label>
-              <br>
+              <br />
               <select id="kids-goal">
                 <option value="1">1 words</option>
                 <option value="2">2 words</option>
@@ -43,10 +43,16 @@
                 <option value="20">20 words</option>
                 <option value="30">30 words</option>
               </select>
-           <!-- </div>
+            </div>
+            <div>
+              
+              <label for="music-toggle">Music On</label>
+              <br>
+              <button id="btn-music-on">On</button>
+              <button id="btn-music-off">Off</button>
+            </div>
             <button id="btn-save">Save</button>
-          </div>  -->
-
+          </div>
         </div>
       </section>
 
@@ -71,14 +77,19 @@
     </main>
 
     <audio id="music" loop>
-      <source src="audio/littleidea.mp3" type="audio/mpeg">
+      <source src="audio/littleidea.mp3" type="audio/mpeg" />
       Your browser does not support this audio file.
     </audio>
+    <audio id="correct-sound" src="audio/word-correct.mp3"></audio>
+    <audio id="win-sound" src="audio/success.mp3"></audio>
+    <audio id="lose-sound" src="audio/game-over.mp3"></audio>
+
     <!-- Music by: https://www.bensound.com
     License code: 6JUVNKVT5IYIFATG-->
 
     <script type="text/javascript" src="js/data.js"></script>
     <script type="text/javascript" src="./js/data-german.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/settings.js"></script>
   </body>
 </html>

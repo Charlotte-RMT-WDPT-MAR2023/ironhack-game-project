@@ -1,20 +1,11 @@
-//settings button
-
-var btnOpenModal = document.getElementById("btn-settings");
-  var modal = document.getElementById("settings-modal");
-
-  btnOpenModal.onclick = function() {
-    modal.style.display = "block";
-  }
-
-
-
 
 //prepare constants
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+
 ctx.canvas.width  = window.innerWidth;
 ctx.canvas.height = window.innerHeight * .99;
+
 const duckBG = new Image();
 duckBG.src = "./images/Ducks.jpg";
 const flameBG = new Image();
@@ -48,44 +39,49 @@ function togglescreen(id, toggle) {
 
 //Add event listener to the button
 window.onload = () => {
-
   //Kids Button
-    document.getElementById('btn-kids').onclick = () => {
-      togglescreen("start-screen", false);
-      togglescreen("game-screen", true);
-      // input.addEventListener('input', checkWord);
-      difficulty = 1;
-      wordsArray = wordsThree.concat(wordsFour);
-      game();
-      };
+  document.getElementById("btn-kids").onclick = () => {
+    togglescreen("start-screen", false);
+    togglescreen("game-screen", true);
+    // input.addEventListener('input', checkWord);
+    difficulty = 1;
+    wordsArray = wordsThree.concat(wordsFour);
+    game();
+  };
   //Easy Button
-    document.getElementById('btn-easy').onclick = () => {
-      togglescreen("start-screen", false);
-      togglescreen("game-screen", true);
-      // input.addEventListener('input', checkWord);
-      difficulty = 2;
-      wordsArray = wordsThree.concat(wordsFour).concat(wordsFive);
-      game();
-      };
+  document.getElementById("btn-easy").onclick = () => {
+    togglescreen("start-screen", false);
+    togglescreen("game-screen", true);
+    // input.addEventListener('input', checkWord);
+    difficulty = 2;
+    wordsArray = wordsThree.concat(wordsFour).concat(wordsFive);
+    game();
+  };
   //Medium Button
-    document.getElementById('btn-med').onclick = () => {
-      togglescreen("start-screen", false);
-      togglescreen("game-screen", true);
-      // input.addEventListener('input', checkWord);
-      difficulty = 3;
-      wordsArray = wordsFive.concat(wordsSix).concat(wordsSeven);
-      game();
-      };
+  document.getElementById("btn-med").onclick = () => {
+    togglescreen("start-screen", false);
+    togglescreen("game-screen", true);
+    // input.addEventListener('input', checkWord);
+    difficulty = 3;
+    wordsArray = wordsFive.concat(wordsSix).concat(wordsSeven);
+    game();
+  };
   //Hard Button
-    document.getElementById('btn-hard').onclick = () => {
-      togglescreen("start-screen", false);
-      togglescreen("game-screen", true);
-      // input.addEventListener('input', checkWord);
-      difficulty = 3;
-      wordsArray = wordsTen.concat(wordsNine).concat(wordsEight).concat(wordsFive).concat(wordsSix).concat(wordsSeven);
-      game();
-      };
+  document.getElementById("btn-hard").onclick = () => {
+    togglescreen("start-screen", false);
+    togglescreen("game-screen", true);
+    // input.addEventListener('input', checkWord);
+    difficulty = 3;
+    wordsArray = wordsTen
+      .concat(wordsNine)
+      .concat(wordsEight)
+      .concat(wordsFive)
+      .concat(wordsSix)
+      .concat(wordsSeven);
+    game();
+  };
   //German Button
+
     document.getElementById('btn-german').onclick = () => {
       togglescreen("start-screen", false);
       togglescreen("game-screen", true);
@@ -96,7 +92,26 @@ window.onload = () => {
       game();
       };
 
+
   };
+};
+
+//reset button
+document.getElementById("btn-play-again").onclick = () => {
+  togglescreen("start-screen", true);
+  togglescreen("game-screen", false);
+  togglescreen("gameover-screen", false);
+  // input.addEventListener("input", checkWord);
+  frames = 0;
+  score = 0;
+  life = 4;
+  wordsOnscreen.length = 0;
+  timer = 61;
+  input.value = "";
+  canvas.style.filter = "blur(0px)";
+  // game();
+};
+
 
   //reset button
   document.getElementById("btn-play-again").onclick = () => {
@@ -117,8 +132,13 @@ window.onload = () => {
     // game();
   };
   
+
 //music
-const music = document.getElementById('music');
+const music = document.getElementById("music");
+music.volume = 0.1;
+const correctSound = document.getElementById("correct-sound");
+const winSound = document.getElementById("win-sound");
+const loseSound = document.getElementById("lose-sound");
 music.load();
 
 
@@ -142,88 +162,113 @@ class WordGenerator {
 
 function moveWords() {
   for (i = 0; i < wordsOnscreen.length; i++) {
-    if(wordsOnscreen[i].direction === 0){wordsOnscreen[i].x += -(1 + wordsOnscreen[i].speed);}
-    if(wordsOnscreen[i].direction === 1){wordsOnscreen[i].x += (1 + wordsOnscreen[i].speed);}
+    if (wordsOnscreen[i].direction === 0) {
+      wordsOnscreen[i].x += -(1 + wordsOnscreen[i].speed);
+    }
+    if (wordsOnscreen[i].direction === 1) {
+      wordsOnscreen[i].x += 1 + wordsOnscreen[i].speed;
+    }
     wordsOnscreen[i].update();
   }
   //every 4.8 secs for kids
-  if(frames % (280 - 40*difficulty) === 0){
-    let height = 50 + Math.floor(Math.random() * (canvas.height-50));
-  // let red = Math.floor(Math.random() * 255);
-  // let green = Math.floor(Math.random() * 255);
-  // let blue = Math.floor(Math.random() * 255);
-  // let color = `rgb(${red},${green},${blue})`;
-  let iWord = Math.floor(Math.random() * wordsArray.length);
-  let direction = Math.floor(Math.random() * 2);
-  let word = wordsArray[iWord];
-  let x;
-  let speed = Math.floor(Math.random() * difficulty)
-  if(direction === 0){x = canvas.width;}
-  if(direction === 1){x = -ctx.measureText(word).width;}
-  wordsOnscreen.push(new WordGenerator(height, 'white', word, direction, x, speed));
-
+  if (frames % (280 - 40 * difficulty) === 0) {
+    let height = 50 + Math.floor(Math.random() * (canvas.height - 50));
+    // let red = Math.floor(Math.random() * 255);
+    // let green = Math.floor(Math.random() * 255);
+    // let blue = Math.floor(Math.random() * 255);
+    // let color = `rgb(${red},${green},${blue})`;
+    let iWord = Math.floor(Math.random() * wordsArray.length);
+    let direction = Math.floor(Math.random() * 2);
+    let word = wordsArray[iWord];
+    let x;
+    let speed = Math.floor(Math.random() * difficulty);
+    if (direction === 0) {
+      x = canvas.width;
+    }
+    if (direction === 1) {
+      x = -ctx.measureText(word).width;
+    }
+    wordsOnscreen.push(
+      new WordGenerator(height, "white", word, direction, x, speed)
+    );
   }
 }
 
 //Function to check if word is on screen
-function checkWord(){
-  let isolateWord = wordsOnscreen.map(item => item.word)
-    if(isolateWord.includes(input.value)){
-        wordsOnscreen.splice(isolateWord.indexOf(input.value), 1);
-        input.value = '';
-        score++;
-    }
-    document.getElementById('score').innerHTML = `Score: ${score}`
+function checkWord() {
+  let isolateWord = wordsOnscreen.map((item) => item.word);
+  if (isolateWord.includes(input.value)) {
+    wordsOnscreen.splice(isolateWord.indexOf(input.value), 1);
+    input.value = "";
+    score++;
+    correctSound.play();
+  }
+  document.getElementById("score").innerHTML = `Score: ${score}`;
 }
 
-function loseLife(){
-  if(difficulty > 1){document.getElementById('life').innerHTML = `Life: ${life}`;}
+function loseLife() {
+  if (difficulty > 1) {
+    document.getElementById("life").innerHTML = `Life: ${life}`;
+  }
   for (i = 0; i < wordsOnscreen.length; i++) {
-    if(wordsOnscreen[i].direction === 0 && wordsOnscreen[i].x < -ctx.measureText(wordsOnscreen[i].word).width){
+    if (
+      wordsOnscreen[i].direction === 0 &&
+      wordsOnscreen[i].x < -ctx.measureText(wordsOnscreen[i].word).width
+    ) {
       wordsOnscreen.splice(i, 1);
-      if(difficulty > 1){life--}
+      if (difficulty > 1) {
+        life--;
+      }
     }
-    if(wordsOnscreen[i].direction === 1 && wordsOnscreen[i].x > canvas.width){
+    if (wordsOnscreen[i].direction === 1 && wordsOnscreen[i].x > canvas.width) {
       wordsOnscreen.splice(i, 1);
-      if(difficulty > 1){life--};
+      if (difficulty > 1) {
+        life--;
+      }
     }
   }
 }
 
 //Onscreen timer
-function countdown(){
-  if(frames % 60 === 0 && difficulty > 1){
+function countdown() {
+  if (frames % 60 === 0 && difficulty > 1) {
     timer--;
-    document.getElementById('timer').innerHTML = `Timer: ${timer}`;}
+    document.getElementById("timer").innerHTML = `Timer: ${timer}`;
+  }
 }
 
 //Win Condition
-function win(){
-  if(score === +document.getElementById('kids-goal').value && difficulty === 1 || timer < 0){
+function win() {
+  if (
+    (score === +document.getElementById("kids-goal").value &&
+      difficulty === 1) ||
+    timer < 0
+  ) {
     cancelAnimationFrame(animation);
     //togglescreen("game-screen", false);
     togglescreen("gameover-screen", true);
     canvas.style.filter = "blur(5px)";
     document.getElementById('win-lose').innerHTML = '<img src="./images/8706.png" id="win" alt=""/>';
     music.pause();
+    winSound.play();
   }
 }
 
 //lose condition
-function lose(){
-  if(difficulty > 1 && life < 1){
+function lose() {
+  if (difficulty > 1 && life < 1) {
     cancelAnimationFrame(animation);
     togglescreen("gameover-screen", true);
     canvas.style.filter = "blur(5px)";
     document.getElementById('win-lose').innerHTML = '<img src="./images/te856-removebg-preview.png" id="lose" alt=""/>';
     music.pause();
+    loseSound.play();
   }
 }
 
-
 //Looping game function
 
-function game(){
+function game() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   if(german===0){ctx.drawImage(duckBG, 0, 0, canvas.width, canvas.height);}
   if(german===1){ctx.drawImage(flameBG, 0, 0, canvas.width, canvas.height);}
@@ -231,12 +276,10 @@ function game(){
   moveWords();
   countdown();
   music.play();
-  frames++
+  frames++;
   checkWord();
   animation = requestAnimationFrame(game);
   loseLife();
   lose();
   win();
 }
-
-
