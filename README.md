@@ -1,10 +1,10 @@
-# Project's name
+# Duckle
 
-[Click here to see deployed game](http://github.com)
+[Click here to see deployed game](https://charlotte-rmt-wdpt-mar2023.github.io/ironhack-game-project/)
 
 ## Description
 
-xx is a children's game where players have to type the words that appear on the screen. The game ends when the player has scored 10 points or has lost all of their lives.
+Duckle is a word game where players have to type the words that appear on the screen. The game ends when the player has scored the set number of points or has lost all of their lives.
 
 
 
@@ -13,32 +13,38 @@ xx is a children's game where players have to type the words that appear on the 
 - Players may type the words on the screen in any order
 - If the word has left the screen before the player types it, the point for that word is no longer available
 - Words disappear from the screen once they have been typed
-- The game ends when the player scores 10 points or when they lose the last of their 3 lives
-
-
+- The player wins the game when they type the number of words set in their goal
+- The player loses the game when their time runs out before they have reached their goal
 
 ## Backlog
 - The game has 4 dificulty levels, they are:
-    - easy: words of 3 or 4 letters
-    - medium: words of 5 or 6 letters
-    - hard: words of 8 to 10 letters
-    - Germa: words of 15 or more letters
-- In the picture version of the game, images appear on the screen and the player must type their name
-- The speed can be increased in the settings
-- Instead of playing to a high score the player may choose to play against the clock
-- The player can make the game more dificult by chosing a higher target than 10
+    - kids: words of 3 or 4 letters
+    - easy: words of 4 or 5 letters
+    - medium: words of 5, 6 or 7 letters
+    - hard: words of 5 to 10 letters
+    - German: German is known for having some of the longest words in the world, so this level is especially challenging
+- The speed increases as the levels get harders
+- The player can make the game more dificult by increasing the goal
 
 
 ## Data structure
-_List of classes and methods_
 
+Classes
+- WordGenerator
 
+Functions
+- togglescreen()
+- moveWords()
+- checkWord()
+- loseLife()
+- countdown()
+- win()
+- lose()
+- game()
+    
 ## States
 - Start Screen
 - Game Screen
 - Game Over Screen
 
 
-
-## Task
-_List of tasks in order of priority_
