@@ -20,7 +20,7 @@ body {
 #start-screen {
   width: 100vw;
   height: 100vh;
-  background: url("/images/Ducks.jpg");
+  background: url("../images/Ducks.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
   display: flex;
