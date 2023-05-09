@@ -258,10 +258,3 @@ const wordsTen = [
 'waterproof', 'hysterical', 'affordable', 'unfinished',
 'romanesque', 'manageable', 'disruptive', 'overweight',
 'ornamental', 'improbable', 'vegetarian'];
-
-// const testArray = ``;
-// let content = testArray.split('\n');
-// let content2 = content.map(val => val.split('\n')).toString()
-// let content3 = content2.split(',')
-// console.log(content);
-// console.log(wordsTen.length)
