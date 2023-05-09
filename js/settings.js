@@ -1,5 +1,4 @@
 //settings
-
 const btnOpenModal = document.getElementById("btn-settings");
 const modal = document.getElementById("settings-modal");
 const btnSave = document.getElementById("btn-save");
@@ -8,35 +7,9 @@ btnOpenModal.onclick = function () {
   modal.style.display = "block";
 };
 
+//basically just a close button
 btnSave.onclick = function () {
   modal.style.display = "none";
-  const difficulty = "kids";
-  const goal = 4;
-  const musicState = true;
-
-  // if (document.getElementById("btn-kid").classList.contains("selected")) {
-  //   difficulty = "kids";
-  // } else if (
-  //   document.getElementById("btn-easy").classList.contains("selected")
-  // ) {
-  //   difficulty = "easy";
-  // } else if (
-  //   document.getElementById("btn-med").classList.contains("selected")
-  // ) {
-  //   difficulty = "medium";
-  // } else if (
-  //   document.getElementById("btn-hard").classList.contains("selected")
-  // ) {
-  //   difficulty = "hard";
-  // } else if (
-  //   document.getElementById("btn-german").classList.contains("selected")
-  // ) {
-  //   difficulty = "german";
-  // }
-
-  goal = parseInt(document.getElementById("kids-goal").value);
-
-  musicState = document.getElementById("music-toggle").checked;
 };
 
 const btnMusicOn = document.getElementById("btn-music-on");
@@ -50,11 +23,13 @@ const btnGerman = document.getElementById("btn-german");
 btnMusicOn.addEventListener("click", () => {
   btnMusicOn.classList.add("selected");
   btnMusicOff.classList.remove("selected");
+  music.volume = 0.1;
 });
 
 btnMusicOff.addEventListener("click", () => {
   btnMusicOff.classList.add("selected");
   btnMusicOn.classList.remove("selected");
+  music.volume = 0;
 });
 
 btnKid.addEventListener("click", () => {
