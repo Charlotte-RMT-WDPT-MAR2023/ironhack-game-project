@@ -14,7 +14,7 @@ Duckle is a word game where players have to type the words that appear on the sc
 - If the word has left the screen before the player types it, the point for that word is no longer available
 - Words disappear from the screen once they have been typed
 - The player wins the game when they type the number of words set in their goal
-- The player loses the game when their time runs out before they have reached their goal
+- The player loses the game when their time runs out before they have reached their goal or they lose their last life
 
 ## Backlog
 - The game has 4 dificulty levels, they are:
@@ -23,7 +23,7 @@ Duckle is a word game where players have to type the words that appear on the sc
     - medium: words of 5, 6 or 7 letters
     - hard: words of 5 to 10 letters
     - German: German is known for having some of the longest words in the world, so this level is especially challenging
-- The speed increases as the levels get harders
+- The speed increases as the levels get harder
 - The player can make the game more dificult by increasing the goal
 
 
